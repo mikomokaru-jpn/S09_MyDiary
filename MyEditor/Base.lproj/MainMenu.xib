@@ -1,0 +1,356 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="13771" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+    <dependencies>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="13771"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner" customClass="NSApplication">
+            <connections>
+                <outlet property="delegate" destination="Voe-Tx-rLC" id="GzC-gU-4Uq"/>
+            </connections>
+        </customObject>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="MyDiary" customModuleProvider="target">
+            <connections>
+                <outlet property="menuNames" destination="aXa-aM-Jaq" id="EWr-yJ-7WA"/>
+                <outlet property="menuRegex" destination="gVq-3i-MtQ" id="i5E-Q8-0UJ"/>
+                <outlet property="menuSizes" destination="cFF-Rk-zfF" id="nLq-3c-tYs"/>
+                <outlet property="window" destination="QvC-M9-y7g" id="gIp-Ho-8D9"/>
+            </connections>
+        </customObject>
+        <customObject id="YLy-65-1bz" customClass="NSFontManager"/>
+        <menu title="Main Menu" systemMenu="main" id="AYu-sK-qS6">
+            <items>
+                <menuItem title="MyDiary" id="1Xt-HY-uBw">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <menu key="submenu" title="MyDiary" systemMenu="apple" id="uQy-DD-JDr">
+                        <items>
+                            <menuItem title="About MyDiary" id="5kV-Vb-QxS">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <connections>
+                                    <action selector="orderFrontStandardAboutPanel:" target="-1" id="Exp-CZ-Vem"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem isSeparatorItem="YES" id="VOq-y0-SEH"/>
+                            <menuItem title="Preferences…" keyEquivalent="," id="BOF-NM-1cW"/>
+                            <menuItem isSeparatorItem="YES" id="wFC-TO-SCJ"/>
+                            <menuItem title="Services" id="NMo-om-nkz">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <menu key="submenu" title="Services" systemMenu="services" id="hz9-B4-Xy5"/>
+                            </menuItem>
+                            <menuItem isSeparatorItem="YES" id="4je-JR-u6R"/>
+                            <menuItem title="Hide MyDiary" keyEquivalent="h" id="Olw-nP-bQN">
+                                <connections>
+                                    <action selector="hide:" target="-1" id="PnN-Uc-m68"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Hide Others" keyEquivalent="h" id="Vdr-fp-XzO">
+                                <modifierMask key="keyEquivalentModifierMask" option="YES" command="YES"/>
+                                <connections>
+                                    <action selector="hideOtherApplications:" target="-1" id="VT4-aY-XCT"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Show All" id="Kd2-mp-pUS">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <connections>
+                                    <action selector="unhideAllApplications:" target="-1" id="Dhg-Le-xox"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem isSeparatorItem="YES" id="kCx-OE-vgT"/>
+                            <menuItem title="Quit MyDiary" keyEquivalent="q" id="4sb-4s-VLi">
+                                <connections>
+                                    <action selector="terminate:" target="-1" id="Te7-pn-YzF"/>
+                                </connections>
+                            </menuItem>
+                        </items>
+                    </menu>
+                </menuItem>
+                <menuItem title="ファイル" id="dMs-cI-mzQ">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <menu key="submenu" title="ファイル" id="bib-Uj-vzu">
+                        <items>
+                            <menuItem title="New" hidden="YES" keyEquivalent="n" id="Was-JA-tGl">
+                                <connections>
+                                    <action selector="newDocument:" target="-1" id="4Si-XN-c54"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Open…" hidden="YES" keyEquivalent="o" id="IAo-SY-fd9">
+                                <connections>
+                                    <action selector="openDocument:" target="-1" id="bVn-NM-KNZ"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem isSeparatorItem="YES" id="m54-Is-iLE"/>
+                            <menuItem title="閉じる" keyEquivalent="w" id="DVo-aG-piG">
+                                <connections>
+                                    <action selector="performClose:" target="-1" id="HmO-Ls-i7Q"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Save As…" hidden="YES" keyEquivalent="S" id="Bw7-FT-i3A">
+                                <connections>
+                                    <action selector="saveDocumentAs:" target="-1" id="VrU-Bt-N3F"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="保存" keyEquivalent="s" id="pxx-59-PXV">
+                                <connections>
+                                    <action selector="saveDocument:" target="-1" id="3F7-Yo-NRz"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Revert to Saved" hidden="YES" keyEquivalent="r" id="KaW-ft-85H">
+                                <connections>
+                                    <action selector="revertDocumentToSaved:" target="-1" id="iJ3-Pv-kwq"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem isSeparatorItem="YES" id="aJh-i4-bef"/>
+                            <menuItem title="Page Setup…" hidden="YES" keyEquivalent="P" id="qIS-W8-SiK">
+                                <modifierMask key="keyEquivalentModifierMask" shift="YES" command="YES"/>
+                                <connections>
+                                    <action selector="runPageLayout:" target="-1" id="Din-rz-gC5"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Print…" hidden="YES" keyEquivalent="p" id="aTl-1u-JFS"/>
+                            <menuItem isSeparatorItem="YES" id="Wbp-RQ-4bw"/>
+                            <menuItem title="ドキュメントを開く" keyEquivalent="o" id="j7p-PU-YRc">
+                                <connections>
+                                    <action selector="openDocument:" target="Voe-Tx-rLC" id="LLm-Om-KYN"/>
+                                </connections>
+                            </menuItem>
+                        </items>
+                    </menu>
+                </menuItem>
+                <menuItem title="編集" id="5QF-Oa-p0T">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <menu key="submenu" title="編集" id="W48-6f-4Dl">
+                        <items>
+                            <menuItem title="取り消す" keyEquivalent="z" id="dRJ-4n-Yzg">
+                                <connections>
+                                    <action selector="undo:" target="-1" id="M6e-cu-g7V"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="やり直す" keyEquivalent="Z" id="6dh-zS-Vam">
+                                <connections>
+                                    <action selector="redo:" target="-1" id="oIA-Rs-6OD"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem isSeparatorItem="YES" id="WRV-NI-Exz"/>
+                            <menuItem title="カット" keyEquivalent="x" id="uRl-iY-unG">
+                                <connections>
+                                    <action selector="cut:" target="-1" id="YJe-68-I9s"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="コピー" keyEquivalent="c" id="x3v-GG-iWU">
+                                <connections>
+                                    <action selector="copy:" target="-1" id="G1f-GL-Joy"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="ペースト" keyEquivalent="v" id="gVA-U4-sdL">
+                                <connections>
+                                    <action selector="paste:" target="-1" id="UvS-8e-Qdg"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="削除" id="pa3-QI-u2k">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <connections>
+                                    <action selector="delete:" target="-1" id="0Mk-Ml-PaM"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="全てを選択" keyEquivalent="a" id="Ruw-6m-B2m">
+                                <connections>
+                                    <action selector="selectAll:" target="-1" id="VNm-Mi-diN"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem isSeparatorItem="YES" id="uyl-h8-XO2"/>
+                            <menuItem title="スピーチ" id="xrE-MZ-jX0">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <menu key="submenu" title="スピーチ" id="3rS-ZA-NoH">
+                                    <items>
+                                        <menuItem title="読み上げを開始" id="Ynk-f8-cLZ">
+                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                            <connections>
+                                                <action selector="startSpeaking:" target="-1" id="654-Ng-kyl"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem title="読み上げを停止" id="Oyz-dy-DGm">
+                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                            <connections>
+                                                <action selector="stopSpeaking:" target="-1" id="dX8-6p-jy9"/>
+                                            </connections>
+                                        </menuItem>
+                                    </items>
+                                </menu>
+                            </menuItem>
+                        </items>
+                    </menu>
+                </menuItem>
+                <menuItem title="ドキュメント" id="jxT-CU-nIS">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <menu key="submenu" title="ドキュメント" id="GEO-Iw-cKr">
+                        <items>
+                            <menuItem title="フォント" id="Gi5-1S-RQB">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <menu key="submenu" title="フォント" systemMenu="font" id="aXa-aM-Jaq">
+                                    <items>
+                                        <menuItem title="Osaka" identifier="Osaka" id="Q5e-8K-NDq">
+                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                            <connections>
+                                                <action selector="setFontName:" target="Voe-Tx-rLC" id="qoT-4d-hal"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem title="ヒラギノ角ゴシック" identifier="HiraKakuProN-W3" id="nRY-OO-EHu">
+                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                            <connections>
+                                                <action selector="setFontName:" target="Voe-Tx-rLC" id="z8e-xK-nKm"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem title="ヒラギノ丸ゴシック" identifier="HiraMaruProN-W4" id="Rmn-dU-Gz5">
+                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                            <connections>
+                                                <action selector="setFontName:" target="Voe-Tx-rLC" id="Vgn-CF-pyW"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem title="ヒラギノ明朝" identifier="HiraMinPro-W3" id="oua-RC-dvC">
+                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                            <connections>
+                                                <action selector="setFontName:" target="Voe-Tx-rLC" id="8k4-9Q-8BX"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem title="Helvetica" identifier="Helvetica" id="dAP-AX-DgQ">
+                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                            <connections>
+                                                <action selector="setFontName:" target="Voe-Tx-rLC" id="OKJ-GL-Lwo"/>
+                                            </connections>
+                                        </menuItem>
+                                    </items>
+                                </menu>
+                            </menuItem>
+                            <menuItem title="サイズ" id="WN5-dq-XkI">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <menu key="submenu" title="サイズ" id="cFF-Rk-zfF">
+                                    <items>
+                                        <menuItem title="12 pt" tag="12" id="aZy-O0-Lif">
+                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                            <connections>
+                                                <action selector="setFontSize:" target="Voe-Tx-rLC" id="oBd-WZ-69U"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem title="13 pt" tag="13" id="KMn-1W-bUU">
+                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                            <connections>
+                                                <action selector="setFontSize:" target="Voe-Tx-rLC" id="c1i-K9-uLW"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem title="14 pt" tag="14" id="XH6-js-8fP">
+                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                            <connections>
+                                                <action selector="setFontSize:" target="Voe-Tx-rLC" id="uB7-hN-AFi"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem title="15 pt" tag="15" id="JBv-qD-36D">
+                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                            <connections>
+                                                <action selector="setFontSize:" target="Voe-Tx-rLC" id="bep-0R-Km8"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem title="16 pt" tag="16" id="DAO-jT-Uoq">
+                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                            <connections>
+                                                <action selector="setFontSize:" target="Voe-Tx-rLC" id="EUL-Oi-hmr"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem title="17 pt" tag="17" id="Jns-XR-QEK">
+                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                            <connections>
+                                                <action selector="setFontSize:" target="Voe-Tx-rLC" id="hWo-bT-tdI"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem title="18 pt" tag="18" id="6mR-aZ-sZ8">
+                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                            <connections>
+                                                <action selector="setFontSize:" target="Voe-Tx-rLC" id="SCG-Tx-M2q"/>
+                                            </connections>
+                                        </menuItem>
+                                    </items>
+                                </menu>
+                            </menuItem>
+                            <menuItem isSeparatorItem="YES" id="cNP-A8-ofJ"/>
+                            <menuItem title="検索方法" id="a2j-IL-wI2">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <menu key="submenu" title="検索方法" id="gVq-3i-MtQ">
+                                    <items>
+                                        <menuItem title="正規表現なし" id="czZ-hk-fX1">
+                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                            <connections>
+                                                <action selector="setRegex:" target="Voe-Tx-rLC" id="ZLq-oU-wN6"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem title="正規表現あり" tag="1" id="D3M-B1-YxZ">
+                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                            <connections>
+                                                <action selector="setRegex:" target="Voe-Tx-rLC" id="nx4-GZ-ybM"/>
+                                            </connections>
+                                        </menuItem>
+                                    </items>
+                                </menu>
+                            </menuItem>
+                            <menuItem isSeparatorItem="YES" id="EdA-FA-rFX"/>
+                            <menuItem title="ルーラーの表示" hidden="YES" id="27h-KS-2VY">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <connections>
+                                    <action selector="toggleRuler:" target="-1" id="8M0-0i-Gl8"/>
+                                </connections>
+                            </menuItem>
+                        </items>
+                    </menu>
+                </menuItem>
+                <menuItem title="ウィンドウ" id="aUF-d1-5bR">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <menu key="submenu" title="ウィンドウ" systemMenu="window" id="Td7-aD-5lo">
+                        <items>
+                            <menuItem title="しまう" keyEquivalent="m" id="OY7-WF-poV">
+                                <connections>
+                                    <action selector="performMiniaturize:" target="-1" id="VwT-WD-YPe"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="すべてを手前に移動" id="LE2-aR-0XJ">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <connections>
+                                    <action selector="arrangeInFront:" target="-1" id="DRN-fu-gQh"/>
+                                </connections>
+                            </menuItem>
+                        </items>
+                    </menu>
+                </menuItem>
+                <menuItem title="ヘルプ" id="wpr-3q-Mcd">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <menu key="submenu" title="ヘルプ" systemMenu="help" id="F2S-fz-NVQ">
+                        <items>
+                            <menuItem title="MyEditor Help" keyEquivalent="?" id="FKE-Sm-Kum">
+                                <connections>
+                                    <action selector="showHelp:" target="-1" id="y7X-2Q-9no"/>
+                                </connections>
+                            </menuItem>
+                        </items>
+                    </menu>
+                </menuItem>
+            </items>
+            <point key="canvasLocation" x="-98" y="-68"/>
+        </menu>
+        <window allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" animationBehavior="default" id="QvC-M9-y7g">
+            <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES"/>
+            <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
+            <rect key="contentRect" x="335" y="390" width="300" height="345"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="1280" height="777"/>
+            <view key="contentView" wantsLayer="YES" id="EiT-Mj-1SZ" customClass="FlippedView" customModule="MyDiary" customModuleProvider="target">
+                <rect key="frame" x="0.0" y="0.0" width="300" height="345"/>
+                <autoresizingMask key="autoresizingMask"/>
+            </view>
+            <point key="canvasLocation" x="53" y="372"/>
+        </window>
+        <menuItem title="Item" id="9py-sr-AMZ">
+            <modifierMask key="keyEquivalentModifierMask"/>
+        </menuItem>
+        <menuItem isSeparatorItem="YES" id="NJg-LH-KTe"/>
+    </objects>
+</document>
