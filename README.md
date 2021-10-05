@@ -16,7 +16,17 @@ Text editor of this application is implemented from NSTextView class. The text f
 #### Line spacing problem (although it is a little detailed)
 Depending on the type of font, upper and lower display positions of full-width characters and half-width characters are different, which makes it look quite strange.
 
-<img src="http://mikomokaru.sakura.ne.jp/data/B25/diary2.png" alt="diary2" title="diary2" width="500">
+<img src="http://mikomokaru.sakura.ne.jp/data/B25/diary2.png" alt="diary2" title="diary2" width="250">
+
+This is exactly the same for TextEdit.app.If you want to adjust it, you could set the line spacing to a negative value by Ruler Setting.
+
+[Menu → Format → Text → Interval]
+
+However, in this app does not incorporate Ruler Setting, because when setting value is changed, an error of unknown cause occurs.
+
+
+<img src="http://mikomokaru.sakura.ne.jp/data/B25/diary3.png" alt="diary3" title="diary3" width="300">
+
 
 ### Display diary
 To open a diary for a particular day, double-click the date on the calendar, select the date and press Open Button, or select Open Item from the menu, and a subwindow will open to display the editor that recorded the diary. Up to 10 subwindows can be opened at the same time.
