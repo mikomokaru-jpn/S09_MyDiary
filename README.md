@@ -33,14 +33,21 @@ To open a diary for a particular day, double-click the date on the calendar, sel
 
 The position and size of the main window are recorded in User Defaults and will be inherited after the application is closed. So when you open a new window, it will be the same position and size as the last closed window.
 
+<img src="http://mikomokaru.sakura.ne.jp/data/B25/diary4.png" alt="diary4" title="diary4" width="300">
+
 ### Change font and size
 Select a font name or size of the text from the menu and change it . This process is implemented using NSNotification function. The selected font name and size values are held in a singleton object and referenced by some objects that need them. The values are saved in Plist and are inherited even after the application is closed.
 
+<img src="http://mikomokaru.sakura.ne.jp/data/B25/diary5.png" alt="diary5" title="diary5" width="300">
+
 ### Text search
 Search by a keyword and highlight the word that match your search. If there are multiple matching words, press Enter key to skip the cursor position to the next word. You can also search with regular expression.
+
+<img src="http://mikomokaru.sakura.ne.jp/data/B25/diary6.png" alt="diary6" title="diary6" width="300">
 
 ### Save text
 The text of the diary is saved in a file by date.
 
 ### Class Structure Diagram
 
+<img src="http://mikomokaru.sakura.ne.jp/data/B25/diary7.png" alt="diary7" title="diary7" width="300">
