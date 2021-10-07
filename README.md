@@ -50,4 +50,4 @@ The text of the diary is saved in a file by date.
 
 ### Class Structure Diagram
 
-<img src="http://mikomokaru.sakura.ne.jp/data/B25/diary7.png" alt="diary7" title="diary7" width="500">
+<img src="http://mikomokaru.sakura.ne.jp/data/B25/diary7.png" alt="diary7" title="diary7" width="600">
