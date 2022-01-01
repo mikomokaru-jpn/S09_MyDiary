@@ -52,7 +52,9 @@ class UAView: NSView, UAViewDelegate{
         //super classのプロパティの参照はここから
         self.wantsLayer = true
         self.layer?.backgroundColor = NSColor.lightGray.cgColor
+        
         self.addSubview(headerView)
+        
         //ドキュメントを開くボタン
         let documentOpen = NSButton.init(frame: NSMakeRect(45, 35, 30, 30))
         documentOpen.image = NSImage.init(named:NSImage.Name.bookmarksTemplate)
@@ -75,6 +77,7 @@ class UAView: NSView, UAViewDelegate{
         clickNextButton.image =  NSImage.init(named:NSImage.Name.rightFacingTriangleTemplate)
         self.addSubview(clickNextButton)
         //曜日見出し
+        
         let youbis = ["月","火","水","木","金","土","日"]
         for i in 0 ..< youbis.count {
             let youbiView = UATextView.init(frame:NSMakeRect(CGFloat(10+(40*i)),68,40,22))
@@ -85,6 +88,7 @@ class UAView: NSView, UAViewDelegate{
                                                attributes: [NSAttributedStringKey.font:fontSmall!])
             self.addSubview(youbiView)
         }
+        
         //日付ビューのグリッド(6行×7列)を作成してカレンダービューへ追加する
         let CELL_WIDTH: CGFloat = 40.0
         let CELL_HEIGHT: CGFloat = 40.0
@@ -108,11 +112,9 @@ class UAView: NSView, UAViewDelegate{
         let currentDaycolor:CGColor =
             NSColor.init(red: 200/255, green: 220/255, blue: 240/255, alpha: 1).cgColor
         let wareki:Array = calendar.yearOfWareki
-        
         let text = String(format: "%ld年%ld月(%@%@)",
                           calendar.year, calendar.month, wareki[0], wareki[1])
-        let headerFont: NSFont =  NSFont.init(name:"YuGothic", size:22) ??  NSFont.init()
-        
+        let headerFont: NSFont =  NSFont.init(name:"YuGothic", size:22) ??  NSFont.systemFont(ofSize:22)
         headerView.text = NSMutableAttributedString.init(string: text,
                                                   attributes: [NSAttributedStringKey.font:headerFont])
         headerView.needsDisplay = true
